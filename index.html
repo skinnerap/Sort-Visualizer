@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Visualizer</title>
+    <link href="style.css" rel='stylesheet' type="text/css">
+    <link href="grid.css" rel="stylesheet" type="text/css">
+    <link href="normalize.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header-and-main">
+<header>
+    <div class="row">
+    <ul class="main-nav">
+        <li>
+            Number of Lines to Sort:
+            <input class='slide' type="range" min="8" max="500" value="100" id="speed-controller">
+        </li>
+        <li>
+            Speed:
+            <input class='slide' type="range" min="0.01" max="100" value="50" id="speed-con">
+        </li>
+        <li>
+            <button id="generate-divs">Randomize Data</button>
+        </li>
+        <li>
+            <img src="arrow.svg" class='arrow' alt="Arrow pointing user to use a sorting algorithm button">
+        </li>
+        <li>
+            <button id="bubble-sort">Bubble Sort</button>
+        </li>
+        <li>
+            <button id="insertion-sort">Insertion Sort</button>
+        </li>
+        <li>
+            <button id="selection-sort">Selection Sort</button>
+        </li>
+        <li>
+            <button id="quick-sort">Quick Sort</button>
+        </li>
+    </ul>
+    </div>
+</header>
+
+
+<div class="row">
+    <div class="div-container span-1-of-2">
+        <! --- INSERT DIVS TO BE SORTED HERE --- >
+    </div>
+
+    <div class="algo-info span-1-of-2">
+        <! --- INSERT SORTING ALGO INFO HERE --- >
+        <h1>Sorting Algorithm Visualizer</h1>
+        <h2>How to Use:</h2>
+        <p class="algo-text">
+            Visualize popular sorting algorithms by simply clicking the
+            button at the top of the page that corresponds to the sorting algorithm
+            that you wish to see.
+        </p>
+        <p class="algo-text">
+            Adjust the amount of lines to sort, and the speed of sorting
+            by adjusting the appropriate sliders on the top of the page.
+        </p>
+        <p class="algo-text">
+            Click the <em>Randomize Data</em> button to create a new
+            randomized list of lines to sort!
+        </p>
+    </div>
+</div>
+</div>
+
+<footer>
+    <div class="footer-container">
+    <div class="row">
+        <div class="span-1-of-3 footer-content">
+            <h4 class="footer-title">Skills Demonstrated in Project</h4>
+            <ul>
+                <li>
+                    Deep Understanding of data structures, and sorting algorithms.
+                </li>
+                <li>
+                    Asynchronous function implementation to show visualizations of
+                    synchronous tasks.
+                </li>
+                <li>
+                    Usage of modern Javascript ES6 and above functionality.
+                </li>
+                <li>
+                    DOM manipulation with modern HTML/CSS.
+                </li>
+            </ul>
+        </div>
+        <div class="span-1-of-3 footer-content">
+            <h4 class="footer-title">Project Details</h4>
+            <! --- INSERT GITHUB REPO WITH DETAILS --- >
+            <button class="footer-link">
+                <a href="#" target="_blank" class="git-link">Download the Github Repo</a>
+            </button>
+            <p class="project-details">
+                You can find all of my code for this project on Github by clicking the
+                link above. Feel free to use it for your own projects, submit issues if
+                you find one, or do just about anything you want with it. If you have any
+                questions about the code I request you submit them via the Github repository.
+            </p>
+        </div>
+        <div class="span-1-of-3 footer-content">
+            <h4 class="footer-title">Other Projects</h4>
+            <! --- INSERT PORTFOLIO WITH DETAILS --- >
+            <button class="footer-link">
+                <a href="#" target="_blank" class="git-link">Visit my Portfolio</a>
+            </button>
+            <p class="project-details">
+                All of my projects are currently uploaded to my personal portfolio.
+                I focus on creating applications that demonstrate my core understanding
+                of important software-engineering principles. My goal is to employ
+                modern best-practices using languages and frameworks that are in high
+                demand by employers.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="signature-container">
+            <div class="signature">
+                Alexander Skinner - 2020
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+
+
+<script src="main.js" type="application/javascript"></script>
+</body>
+</html>
