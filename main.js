@@ -1,11 +1,14 @@
 /******** EVENT LISTENERS ************/
-let speedController = document.getElementById('speed-controller');
+let numOfDivsCon = document.getElementById('num-of-divs-con');
 
 let divsSelector = document.getElementById('generate-divs');
 divsSelector.addEventListener('click', () => {
-    let num = speedController.value;
-    let divHeight = window.screen.height / num;
-    console.log(divHeight);
+    let num = numOfDivsCon.value;
+
+    let divHeight = container.clientWidth / num;
+    if(window.screen.width >= window.screen.height) {
+        divHeight = window.screen.height / num;
+    }
 
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
@@ -17,8 +20,11 @@ divsSelector.addEventListener('click', () => {
 
 let bubbleBtn = document.getElementById('bubble-sort');
 bubbleBtn.addEventListener('click', () => {
-    let num = speedController.value;
-    let divHeight = window.screen.height / num;
+    let num = numOfDivsCon.value;
+    let divHeight = container.clientWidth / num;
+    if(window.screen.width >= window.screen.height) {
+        divHeight = window.screen.height / num;
+    }
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
     sortingDivs.forEach(d => {
@@ -30,8 +36,11 @@ bubbleBtn.addEventListener('click', () => {
 
 let insertionBtn = document.getElementById('insertion-sort');
 insertionBtn.addEventListener('click', () => {
-    let num = speedController.value;
-    let divHeight = window.screen.height / num;
+    let num = numOfDivsCon.value;
+    let divHeight = container.clientWidth / num;
+    if(window.screen.width >= window.screen.height) {
+        divHeight = window.screen.height / num;
+    }
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
     sortingDivs.forEach(d => {
@@ -43,8 +52,11 @@ insertionBtn.addEventListener('click', () => {
 
 let selectionBtn = document.getElementById('selection-sort');
 selectionBtn.addEventListener('click', () => {
-    let num = speedController.value;
-    let divHeight = window.screen.height / num;
+    let num = numOfDivsCon.value;
+    let divHeight = container.clientWidth / num;
+    if(window.screen.width >= window.screen.height) {
+        divHeight = window.screen.height / num;
+    }
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
     sortingDivs.forEach(d => {
@@ -56,8 +68,11 @@ selectionBtn.addEventListener('click', () => {
 
 let quickBtn = document.getElementById('quick-sort');
 quickBtn.addEventListener('click', () => {
-    let num = speedController.value;
-    let divHeight = window.screen.height / num;
+    let num = numOfDivsCon.value;
+    let divHeight = container.clientWidth / num;
+    if(window.screen.width >= window.screen.height) {
+        divHeight = window.screen.height / num;
+    }
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
     sortingDivs.forEach(d => {
@@ -71,7 +86,7 @@ quickBtn.addEventListener('click', () => {
 /*
 let mergeBtn = document.getElementById('merge-sort');
 mergeBtn.addEventListener('click', () => {
-    let num = speedController.value;
+    let num = numOfDivsCon.value;
     let divHeight = window.screen.height / num;
     generateSortingDivs(num);
     let sortingDivs = document.querySelectorAll('.sorting-div');
@@ -108,12 +123,16 @@ const storeSortingDivs = () => {
 }
 
 /******** ON INITIALIZATION ********/
-let num = speedController.value;
-let divHeight = window.screen.height / num;
+let num = numOfDivsCon.value;
+let container = document.querySelector('.div-container');
+let divHeight = container.clientWidth / num;
+if(window.screen.width >= 700) {
+    divHeight = window.screen.height / num;
+}
 generateSortingDivs(num);
 let sortingDivs = document.querySelectorAll('.sorting-div');
 sortingDivs.forEach(d => {
-    d.style.height = (divHeight / 2).toString() + 'px';
+    d.style.height = (divHeight/2).toString() + 'px';
 });
 
 /********** SLEEP FUNCTION ************/
@@ -170,9 +189,9 @@ async function bubbleSort(divCollection) {
 
 function displayBubbleSortInfo(){
     const infoDiv = document.querySelector('.algo-info');
-    let html = `<h1>Bubble Sort Visualizer</h1>`;
-    html += `<h2>Time Complexity: O(n^2)</h2>`;
-    html += `<h3>Space Complexity: O(1)</h3>`;
+    let html = `<h1 class="main-h1">Bubble Sort Visualizer</h1>`;
+    html += `<h2 class="main-h1">Time Complexity: O(n^2)</h2>`;
+    html += `<h3 class="main-h3">Space Complexity: O(1)</h3>`;
     html += `<p class="algo-text">This sorting algorithm loops through the array and continues to push the 
                largest found element into the last position, also pushing the last available
                position down by one on each iteration. It is guaranteed to run in exactly 
@@ -209,9 +228,9 @@ async function partition(divCollection, start, end) {
 
 function displayQuickSortInfo(){
     const infoDiv = document.querySelector('.algo-info');
-    let html = `<h1>Quick Sort Visualizer</h1>`;
-    html += `<h2>Time Complexity: O(n log n)</h2>`;
-    html += `<h3>Space Complexity: O(log n)</h3>`;
+    let html = `<h1 class="main-h1">Quick Sort Visualizer</h1>`;
+    html += `<h2 class="main-h2">Time Complexity: O(n log n)</h2>`;
+    html += `<h3 class="main-h3">Space Complexity: O(log n)</h3>`;
     html += `<p class="algo-text">This sorting algorithm uses the idea of a partition to sort
                 each iteration recursively. You can implement quick sort
                 in a variety of manners based on the method in which you
@@ -239,9 +258,9 @@ async function insertionSort(divCollection) {
 
 function displayInsertionSort() {
     const infoDiv = document.querySelector('.algo-info');
-    let html = `<h1>Insertion Sort Visualizer</h1>`;
-    html += `<h2>Time Complexity: O(n^2)</h2>`;
-    html += `<h3>Space Complexity: O(1)</h3>`;
+    let html = `<h1 class="main-h1">Insertion Sort Visualizer</h1>`;
+    html += `<h2 class="main-h2">Time Complexity: O(n^2)</h2>`;
+    html += `<h3 class="main-h3">Space Complexity: O(1)</h3>`;
     html += `<p class="algo-text">This sorting algorithm is similar to how we
                                   like to sort a deck of cards. We iterate through
                                   the array, and at each element we check behind it
@@ -277,9 +296,9 @@ async function selectionSort(divCollection) {
 
 function displaySelectionSort() {
     const infoDiv = document.querySelector('.algo-info');
-    let html = `<h1>Selection Sort Visualizer</h1>`;
-    html += `<h2>Time Complexity: O(n^2)</h2>`;
-    html += `<h3>Space Complexity: O(1)</h3>`;
+    let html = `<h1 class="main-h1">Selection Sort Visualizer</h1>`;
+    html += `<h2 class="main-h2">Time Complexity: O(n^2)</h2>`;
+    html += `<h3 class="main-h3">Space Complexity: O(1)</h3>`;
     html += `<p class="algo-text">This sorting algorithm builds a sorted subarray from
                                 left to right, leaving the unsorted subarray on the right
                                 side of the sorted subarray. It selects the new smallest

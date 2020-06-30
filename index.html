@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sort Visualizer</title>
     <link href="style.css" rel='stylesheet' type="text/css">
     <link href="grid.css" rel="stylesheet" type="text/css">
@@ -12,83 +13,88 @@
 <body>
 
 <div class="header-and-main">
-<header>
+    <header>
+        <div class="row">
+        <ul class="main-nav">
+            <li class="menu-choice" id="num-of-divs">
+                Number of Lines to Sort:
+                <input class='slide' type="range" min="8" max="300" value="100" id="num-of-divs-con">
+            </li>
+            <li class="menu-choice" id="speed">
+                Speed:
+                <input class='slide' type="range" min="0.01" max="100" value="50" id="speed-con">
+            </li>
+            <li class="menu-choice">
+                <button id="generate-divs">Randomize Data</button>
+            </li>
+            <li class="menu-choice">
+                <img src="arrow.svg" class='arrow' alt="Arrow pointing user to use a sorting algorithm button">
+            </li>
+
+
+            <li class="menu-choice" id="bSort">
+                <button id="bubble-sort">Bubble Sort</button>
+            </li>
+            <li class="menu-choice" id="iSort">
+                <button id="insertion-sort">Insertion Sort</button>
+            </li>
+            <li class="menu-choice" id="sSort">
+                <button id="selection-sort">Selection Sort</button>
+            </li>
+            <li class="menu-choice" id="qSort">
+                <button id="quick-sort">Quick Sort</button>
+            </li>
+        </ul>
+        </div>
+    </header>
+    <div class="row spacer">
+        <!----- A SPACER BETWEEN THE HEADER AND THE MAIN SECTION TO BLEND THE
+                VISUALIZATION ALGORITHM COLORS INTO THE SPACER ---->
+        &nbsp;
+    </div>
+
     <div class="row">
-    <ul class="main-nav">
-        <li>
-            Number of Lines to Sort:
-            <input class='slide' type="range" min="8" max="500" value="100" id="speed-controller">
-        </li>
-        <li>
-            Speed:
-            <input class='slide' type="range" min="0.01" max="100" value="50" id="speed-con">
-        </li>
-        <li>
-            <button id="generate-divs">Randomize Data</button>
-        </li>
-        <li>
-            <img src="arrow.svg" class='arrow' alt="Arrow pointing user to use a sorting algorithm button">
-        </li>
-        <li>
-            <button id="bubble-sort">Bubble Sort</button>
-        </li>
-        <li>
-            <button id="insertion-sort">Insertion Sort</button>
-        </li>
-        <li>
-            <button id="selection-sort">Selection Sort</button>
-        </li>
-        <li>
-            <button id="quick-sort">Quick Sort</button>
-        </li>
-    </ul>
-    </div>
-</header>
+        <div class="div-container">
+            <! --- INSERT DIVS TO BE SORTED HERE --- >
+        </div>
+        <div class="algo-info">
+            <! --- INSERT SORTING ALGO INFO HERE --- >
+            <h1 class="main-h1">Sorting Algorithm Visualizer</h1>
+            <h2 class="main-h2">How to Use:</h2>
+            <p class='algo-text'>
+                Visualize popular sorting algorithms by simply clicking the
+                button at the top of the page that corresponds to the sorting algorithm
+                that you wish to see.
+            </p>
+            <p class='algo-text'>
+                Adjust the amount of lines to sort, and the speed of sorting
+                by adjusting the appropriate sliders on the top of the page.
+            </p>
+            <p class="algo-text">
+                Click the <em>Randomize Data</em> button to create a new
+                randomized list of lines to sort!
+            </p>
+        </div>
 
-
-<div class="row">
-    <div class="div-container span-1-of-2">
-        <! --- INSERT DIVS TO BE SORTED HERE --- >
-    </div>
-
-    <div class="algo-info span-1-of-2">
-        <! --- INSERT SORTING ALGO INFO HERE --- >
-        <h1>Sorting Algorithm Visualizer</h1>
-        <h2>How to Use:</h2>
-        <p class="algo-text">
-            Visualize popular sorting algorithms by simply clicking the
-            button at the top of the page that corresponds to the sorting algorithm
-            that you wish to see.
-        </p>
-        <p class="algo-text">
-            Adjust the amount of lines to sort, and the speed of sorting
-            by adjusting the appropriate sliders on the top of the page.
-        </p>
-        <p class="algo-text">
-            Click the <em>Randomize Data</em> button to create a new
-            randomized list of lines to sort!
-        </p>
     </div>
 </div>
-</div>
-
 <footer>
     <div class="footer-container">
     <div class="row">
         <div class="span-1-of-3 footer-content">
             <h4 class="footer-title">Skills Demonstrated in Project</h4>
             <ul>
-                <li>
+                <li class="skills">
                     Deep Understanding of data structures, and sorting algorithms.
                 </li>
-                <li>
+                <li class="skills">
                     Asynchronous function implementation to show visualizations of
                     synchronous tasks.
                 </li>
-                <li>
+                <li class="skills">
                     Usage of modern Javascript ES6 and above functionality.
                 </li>
-                <li>
+                <li class="skills">
                     DOM manipulation with modern HTML/CSS.
                 </li>
             </ul>
@@ -124,7 +130,7 @@
     <div class="row">
         <div class="signature-container">
             <div class="signature">
-                Alexander Skinner - 2020
+                Alexander Skinner 2020
             </div>
         </div>
     </div>
